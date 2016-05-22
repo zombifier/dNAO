@@ -857,7 +857,6 @@ register struct obj *obj;
 	case RIN_STEALTH:
 	case RIN_HUNGER:
 	case RIN_AGGRAVATE_MONSTER:
-	case RIN_POISON_RESISTANCE:
 	case RIN_CONFLICT:
 	case RIN_TELEPORT_CONTROL:
 	case RIN_POLYMORPH:
@@ -885,6 +884,9 @@ register struct obj *obj;
 	break;
 	case RIN_SHOCK_RESISTANCE:
 		if(!oldprop && !HShock_resistance) Your("ringfinger feels numb!");
+	break;
+	case RIN_POISON_RESISTANCE:
+		if(!oldprop && !HPoison_resistance) You_feel("healthy.");
 	break;
 	case RIN_SEE_INVISIBLE:
 		/* can now see invisible monsters */
