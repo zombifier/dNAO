@@ -97,8 +97,12 @@ Boots_on()
 	case HIGH_BOOTS:
 	case PLASTEEL_BOOTS:
 	case CRYSTAL_BOOTS:
-	case JUMPING_BOOTS:
 	case KICKING_BOOTS:
+		break;
+	case JUMPING_BOOTS:
+		/* jumping is obvious no matter what the situation */
+		makeknown(uarmf->otyp);
+		pline("Your %s feel longer.", makeplural(body_part(LEG)));
 		break;
 	case WATER_WALKING_BOOTS:
 		if (u.uinwater) spoteffects(TRUE);
@@ -177,12 +181,16 @@ Boots_off()
 			makeknown(otyp);
 		}
 		break;
+	case JUMPING_BOOTS:
+		/* jumping is obvious no matter what the situation */
+		makeknown(otyp);
+		pline("Your %s feel shorter.", makeplural(body_part(LEG)));
+		break;
 	case LOW_BOOTS:
 	case IRON_SHOES:
 	case HIGH_BOOTS:
 	case PLASTEEL_BOOTS:
 	case CRYSTAL_BOOTS:
-	case JUMPING_BOOTS:
 	case KICKING_BOOTS:
 		break;
 	default: impossible(unknown_type, c_boots, otyp);
