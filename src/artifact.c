@@ -1947,6 +1947,8 @@ int dieroll; /* needed for Magicbane and vorpal blades */
 	    if (realizes_damage)
 			pline_The("fiery %s %s %s%c", otmp->oartifact == ART_LIMB_OF_THE_BLACK_TREE ? "tree-branch" : 
 										  otmp->oartifact == ART_NIGHTHORN ? "horn" :
+										  otmp->oartifact == ART_HELLFIRE ? "bolt" :
+										  otmp->oartifact == ART_FIRE_OF_HEAVEN ? "trident" :
 										  "blade",
 				!spec_dbon_applies ? "hits" :
 				(mdef->data == &mons[PM_WATER_ELEMENTAL] || mdef->data == &mons[PM_LETHE_ELEMENTAL]) ?
@@ -1963,6 +1965,7 @@ int dieroll; /* needed for Magicbane and vorpal blades */
 			pline_The("ice-cold %s %s %s%c", otmp->oartifact == ART_LASH_OF_THE_COLD_WASTE ? "whip" : 
 											 otmp->oartifact == ART_SCEPTRE_OF_THE_FROZEN_FLOO ? "staff" : 
 											 otmp->oartifact == ART_WRATHFUL_WIND ? "club" : 
+											 otmp->oartifact == ART_BOW_OF_SKADI ? "arrow" :
 											 "blade",
 				!spec_dbon_applies ? "hits" : "freezes",
 				hittee, !spec_dbon_applies ? '.' : '!');
@@ -1974,6 +1977,8 @@ int dieroll; /* needed for Magicbane and vorpal blades */
 			pline_The("%s hits%s %s%c", otmp->oartifact == ART_CARESS ? "lashing whip" : 
 										otmp->oartifact == ART_ARYFAERN_KERYM ? "crackling sword-shaped void" : 
 										otmp->oartifact == ART_RAMIEL ? "thundering polearm" : 
+										otmp->oartifact == ART_THUNDER_S_VOICE ? "crackling silver blade" :
+										otmp->oartifact == ART_WRATH_OF_HEAVEN ? "thundering sword" :
 										"massive hammer",
 			  !spec_dbon_applies ? "" : "!  Lightning strikes",
 			  hittee, !spec_dbon_applies ? '.' : '!');
