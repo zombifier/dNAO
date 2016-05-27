@@ -3541,6 +3541,13 @@ typfnd:
 
 		otmp = oname(otmp, name);
 		if (otmp->oartifact) {
+			if ((otmp->oartifact == ART_SUNBEAM) || (otmp->oartifact == ART_MOONBEAM)){
+				if (cnt <= 20
+#ifdef WIZARD
+					|| wizard
+#endif
+					) otmp->quan = (long) cnt;
+			}
 			u.uconduct.wisharti++;	/* KMH, conduct */
 		}
 	}
